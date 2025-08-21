@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter the size of array: ");
+    scanf("%d", &n);
+    int arr[n];
+    printf("Enter %d elements:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    int first, second, third;
+    first = second = third = -999999;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] > first) {
+            third = second;
+            second = first;
+            first = arr[i];
+        }
+        else if (arr[i] > second && arr[i] != first) {
+            third = second;
+            second = arr[i];
+        }
+        else if (arr[i] > third && arr[i] != second && arr[i] != first) {
+            third = arr[i];
+        }
+    }
+    printf("Largest = %d\n", first);
+    printf("Second Largest = %d\n", second);
+    printf("Third Largest = %d\n", third);
+    return 0;
+}
