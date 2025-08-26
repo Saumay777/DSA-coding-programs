@@ -1,0 +1,15 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+using namespace std;
+long long sumOfAllSubsets(vector<int>& arr) {
+    long long totalSum = 0;
+    for (int x : arr) totalSum += x;
+    int n = arr.size();
+    return totalSum * (1LL << (n - 1));
+}
+int main() {
+    vector<int> arr = {1, 2, 3};
+    cout << "Sum of all subsets = " << sumOfAllSubsets(arr) << endl;
+    return 0;
+}
