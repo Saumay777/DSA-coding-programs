@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+void rearrange(vector<int>& arr) {
+    int n = arr.size();
+    vector<int> result;
+    for (int x : arr) {
+        if (x > 0) result.push_back(x);
+    }
+    for (int x : arr) {
+        if (x <= 0) result.push_back(x);
+    }
+    arr = result;
+}
+int main() {
+    vector<int> arr = {1, 0, -3, 5, 0, 2, -1, 4};
+    rearrange(arr);
+    cout << "Rearranged array: ";
+    for (int x : arr) cout << x << " ";
+    cout << endl;
+    return 0;
+}
